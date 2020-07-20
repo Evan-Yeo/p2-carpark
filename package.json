@@ -1,7 +1,7 @@
 {
   "name": "evan-project2-ga-carpark",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project 2",
   "main": "app.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
@@ -37,5 +37,16 @@
     "jest": "^26.1.0",
     "mocha": "^8.0.1",
     "supertest": "^4.0.2"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evan-Yeo/p2-carpark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Evan-Yeo/p2-carpark/issues"
+  },
+  "homepage": "https://github.com/Evan-Yeo/p2-carpark#readme"
 }
