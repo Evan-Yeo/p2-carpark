@@ -1,7 +1,7 @@
 <div class="container mt-3">
-    <h2>New User</h2>
+    <h2>Create User (Admin)</h2>
 
-    <form action="users/new" method="post">
+    <form action="/users/new" method="post">
         <div>
             <label>First Name</label>
             <input name="firstname" placeholder="John" />
@@ -20,9 +20,16 @@
         </div>
         <div>
             <label>Admin</label>
-            <input name="management" type="radio" value="yes" /> Yes
-            <input name="management" type="radio" value="no" /> No
+            <input name="isAdmin" type="radio" value="yes" /> Yes
+            <input name="isAdmin" type="radio" value="no" /> No
         </div>
+        <div>
+            <label>Account type :</label>
+            <input name="accountType" type="radio" value="resident" /> resident
+            <input name="accountType" type="radio" value="visitor" /> visitor
+            <input name="accountType" type="radio" value="security" /> security
+        </div>
+
 
 
 

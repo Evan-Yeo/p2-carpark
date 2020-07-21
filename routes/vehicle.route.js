@@ -8,7 +8,7 @@ const Space = require("../models/space.model");
   @route /
   @desc Displays all users and vehicles
 */
-router.get("/", async (req, res) => {
+router.get("/show", async (req, res) => {
     console.log("Req User", req.user);
     try {
         //get all vehicles
@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
         let users = await User.find();
 
         // console.log(vehicles);
-        res.render("vehicles/index", {
+        res.render("vehicles/show", {
             vehicles,
             users
         });
@@ -51,7 +51,7 @@ router.post("/new", (req, res) => {
                 user.vehicles.push(vehicle._id);
 
                 user.save().then(() => {
-                    res.redirect("vehicles/show");
+                    res.redirect("/show");
                 });
             });
         })
@@ -86,17 +86,7 @@ router.get("/show/:id", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-    //   Vehicle.findById(req.params.id)
-    //     .populate("ownedBy")
-    //     .then((vehicle) => {
-    //       res.send(vehicle);
-    //     });
 
-    //   Vehicle.findById(req.params.id).then((vehicle) => {
-    //     User.findById(vehicle.ownedBy).then((user) => {
-    //       res.send(vehicle, user);
-    //     });
-    //   });
 });
 
 router.get("/edit/:id", async (req, res) => {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 
 const userSchema = Schema({
     firstname: {
@@ -19,14 +19,14 @@ const userSchema = Schema({
         type: String,
         required: true,
     },
-    isManagement: {
+    isAdmin: {
         type: Boolean,
         default: false,
         required: true,
     },
     accountType: {
         type: String,
-        enum: ["Resident", "Visitor", "Security"],
+        enum: ["resident", "visitor", "security"],
         required: true,
     },
     vehicles: [{
@@ -39,12 +39,12 @@ userSchema.methods.getName = function () {
     return `${this.firstname} ${this.lastname}`;
 }
 
-userSchema.methods.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-    // bcrypt.compare(password, this.password).then((result) => {
-    //   return result;
-    // });
-};
+// userSchema.methods.validPassword = function (password) {
+//     return bcrypt.compareSync(password, this.password);
+// bcrypt.compare(password, this.password).then((result) => {
+//   return result;
+// });
+// };
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
