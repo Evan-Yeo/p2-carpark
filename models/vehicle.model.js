@@ -20,6 +20,9 @@ const vehicleSchema = Schema({
     },
 });
 
+vehicleSchema.methods.getName = function () {
+    return `CAR NUMBER: ${this.carPlate}  OWNER: ${this.ownedBy.firstname} ${this.ownedBy.lastname}`;
+}
 
 const Vehicle = mongoose.model("Vehicle", vehicleSchema);
 module.exports = Vehicle;

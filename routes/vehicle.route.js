@@ -48,7 +48,7 @@ router.post("/new", (req, res) => {
                 user.vehicles.push(vehicle._id);
 
                 user.save().then(() => {
-                    res.redirect("/show");
+                    res.redirect("/vehicles/show");
                 });
             });
         })
