@@ -4,15 +4,15 @@
     <form action="/vehicles/new" method="post">
         <div>
             <label>Type of vehicle</label>
-            <input type="text" placeholder="Van, Car, Lorry" />
+            <input name="vehType" type="string" placeholder="Van, Car, Lorry" />
         </div>
         <div>
             <label>Vehicle color</label>
-            <input type="text" placeholder="Red, green, Blue" />
+            <input name="vehColor" type="string" placeholder="Red, green, Blue" />
         </div>
         <div>
             <label>Car Plate Number</label>
-            <input type="text" placeholder="SHA 1111 A" />
+            <input name="carPlate" type="string" placeholder="SHA 1111 A" />
         </div>
         <div>
             <select name="ownedBy">
