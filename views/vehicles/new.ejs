@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <h2>New Vehicle</h2>
+
+    <form action="vehicles/new" method="post">
+        <div>
+            <label>Type of vehicle</label>
+            <input type="text" placeholder="Van, Car, Lorry" />
+        </div>
+        <div>
+            <label>Vehicle color</label>
+            <input type="text" placeholder="Red, green, Blue" />
+        </div>
+        <div>
+            <label>Car Plate Number</label>
+            <input type="text" placeholder="SHA 1111 A" />
+        </div>
+
+        <select name="ownedBy">
+            <option value="">Owner</option>
+            <% users.forEach(user => { %>
+            <option value="<%= user._id %>"><%= user.firstname %> <%= user.lastname %></option>
+            <% }) %>
+        </select>
+
+        <button type="submit">Add vehicle</button>
+    </form>
+</div>

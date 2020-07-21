@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <h2>New User</h2>
+
+    <form action="users/new" method="post">
+        <div>
+            <label>First Name</label>
+            <input name="firstname" placeholder="John" />
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input name="lastname" placeholder="Doe" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input name="email" type="email" placeholder="john.doe@email.com" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input name="password" type="password" placeholder="******" />
+        </div>
+        <div>
+            <label>Admin</label>
+            <input name="management" type="radio" value="yes" /> Yes
+            <input name="management" type="radio" value="no" /> No
+        </div>
+
+
+
+        <button type="submit">Create User</button>
+    </form>
+</div>

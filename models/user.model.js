@@ -22,10 +22,12 @@ const userSchema = Schema({
     isManagement: {
         type: Boolean,
         default: false,
+        required: true,
     },
     accountType: {
         type: String,
         enum: ["Resident", "Visitor", "Security"],
+        required: true,
     },
     vehicles: [{
         type: mongoose.Schema.Types.ObjectId,

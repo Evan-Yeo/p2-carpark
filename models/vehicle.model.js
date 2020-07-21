@@ -14,11 +14,16 @@ const vehicleSchema = Schema({
         type: String,
         required: true,
     },
-    owner: {
+    space: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Space",
+    }, ],
+    ownedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
 });
+
 
 const Vehicle = mongoose.model("Vehicle", vehicleSchema);
 module.exports = Vehicle;

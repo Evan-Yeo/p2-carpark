@@ -2,22 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const spaceSchema = Schema({
-    spaceAllocated: {
+    allocatedTo: {
         type: String,
-        required: true,
+        ref: "User",
     },
-    maxSpace: {
-        type: number,
-        ref: "Space",
-    },
-    currentSpace: {
-        type: number,
-        ref: "Space",
-    },
-    occupied: {
+    isFilled: {
         type: Boolean,
         default: false,
-    }
+    },
 
 });
 
