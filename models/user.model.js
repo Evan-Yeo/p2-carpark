@@ -24,7 +24,7 @@ const userSchema = Schema({
         enum: ["admin", "visitor", "security"],
         required: true,
     },
-    vehicles: [{
+    vehiclesOwned: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Vehicle",
     }, ],

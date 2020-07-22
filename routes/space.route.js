@@ -1,5 +1,12 @@
-// const router = require("express").Router();
-// const Space = require("../models/space.model");
+const router = require("express").Router();
+const Space = require("../models/space.model");
+const Vehicle = require("../models/vehicle.model");
+
+router.get("/spaces", (req, res) => {
+    res.render("spaces/show");
+});
+
+
 
 // router.get("/", async (req, res) => {
 //     try {
@@ -21,4 +28,4 @@
 //         });
 // });
 
-// module.exports = router;
+module.exports = router;

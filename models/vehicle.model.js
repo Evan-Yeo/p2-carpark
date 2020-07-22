@@ -18,6 +18,10 @@ const vehicleSchema = Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+    spaceTaken: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Space",
+    },
 });
 
 vehicleSchema.methods.getName = function () {

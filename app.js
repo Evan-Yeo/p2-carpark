@@ -61,7 +61,7 @@ app.use(expressLayouts); //Express EJS layout to make views into block
 app.use("/users", require("./routes/user.route"));
 app.use("/vehicles", require("./routes/vehicle.route"));
 app.use("/auth", require("./routes/auth.route"));
-// app.use("/", require("./routes/space.route"));
+app.use("/", require("./routes/space.route"));
 
 //connect to port
 app.listen(process.env.PORT, () => {

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Vehicle = require("../models/vehicle.model");
 const User = require("../models/user.model");
-// const Space = require("../models/space.model");
+const Space = require("../models/space.model");
 
 /* 
   @method GET
@@ -45,7 +45,7 @@ router.post("/new", (req, res) => {
             //if saved then save user
             User.findById(vehicle.ownedBy).then((user) => {
                 //push into vehicles array in user model
-                user.vehicles.push(vehicle._id);
+                user.vehiclesOwned.push(vehicle._id);
 
                 user.save().then(() => {
                     res.redirect("/vehicles/show");

@@ -1,18 +1,18 @@
-<div>
-    <h2>Users</h2>
-    <a href="/users/new">Add new user</a>
-</div>
+  <div class="container mt-5">
+      <h2>Users</h2>
+      <a href="/users/new">Add new user</a>
+  </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <ul>
-                    <% users.forEach(user => { %>
-                    <li><%= user.getName() %></li>
-                    <% }) %>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="row">
+                  <ul>
+                      <% users.forEach(user => { %>
+                      <li><%= user.getName() %></li>
+                      <% }) %>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
