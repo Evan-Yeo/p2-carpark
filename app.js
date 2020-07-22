@@ -13,7 +13,7 @@ require("dotenv").config();
 Connect to MongoDB 
 */
 mongoose.connect(
-    process.env.MONGODBLIVE, {
+    process.env.MONGODBURL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -60,7 +60,7 @@ app.use(expressLayouts); //Express EJS layout to make views into block
 //all routes
 app.use("/users", require("./routes/user.route"));
 app.use("/vehicles", require("./routes/vehicle.route"));
-// app.use("/auth", require("./routes/auth.route"));
+app.use("/auth", require("./routes/auth.route"));
 // app.use("/", require("./routes/space.route"));
 
 //connect to port

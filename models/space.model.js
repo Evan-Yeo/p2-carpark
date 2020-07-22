@@ -4,8 +4,12 @@
 // const spaceSchema = Schema({
 //     allocatedTo: {
 //         type: String,
-//         ref: "User",
+//         ref: "Vehicle",
 //     },
+//     spaceUsed: [{
+//         type: String,
+//         ref: "Vehicle",
+//     },],
 //     isFilled: {
 //         type: Boolean,
 //         default: false,

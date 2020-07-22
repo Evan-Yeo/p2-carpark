@@ -9,7 +9,7 @@ const User = require("../models/user.model");
   @desc Displays all vehicles
 */
 router.get("/show", async (req, res) => {
-    console.log("Req User", req.user);
+    // console.log("Req User", req.user);
     try {
         //get all vehicles
         let vehicles = await Vehicle.find()
