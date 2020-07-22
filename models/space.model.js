@@ -6,10 +6,10 @@ const spaceSchema = Schema({
     //         type: String,
     //         ref: "Vehicle",
     //     },
-    spaceUsedBy: {
+    spaceUsedBy: [{
         type: String,
         ref: "Vehicle",
-    },
+    }, ],
     //     isFilled: {
     //         type: Boolean,
     //         default: false,
