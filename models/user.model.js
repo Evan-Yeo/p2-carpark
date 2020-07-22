@@ -19,14 +19,9 @@ const userSchema = Schema({
         type: String,
         required: true,
     },
-    isAdmin: {
-        type: Boolean,
-        default: false,
-        required: true,
-    },
     accountType: {
         type: String,
-        enum: ["resident", "visitor", "security"],
+        enum: ["admin", "visitor", "security"],
         required: true,
     },
     vehicles: [{
