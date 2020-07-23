@@ -1,38 +1,39 @@
 <div class="container mt-3">
-    <h2>New Vehicle</h2>
+	<h2>New Vehicle</h2>
 
-    <form action="/vehicles/new" method="post">
-        <div>
-            <label>Type of vehicle</label>
-            <input name="vehType" type="string" placeholder="Van, Car, Lorry" />
-        </div>
-        <div>
-            <label>Vehicle color</label>
-            <input name="vehColor" type="string" placeholder="Red, green, Blue" />
-        </div>
-        <div>
-            <label>Car Plate Number</label>
-            <input name="carPlate" type="string" placeholder="SHA 1111 A" />
-        </div>
-        <div>
-            <select name="ownedBy">
-                <option value="">Owner</option>
-                <% users.forEach(user => { %>
-                <option value="<%= user._id %>"><%= user.getName() %> </option>
-                <% }) %>
-            </select>
-        </div>
-        <div>
-            <select name="spaceTaken">
-                <option value="">Lot</option>
-                <% spaces.forEach(space => { %>
-                <option value="<%= space._id %>"><%= space.getName() %> </option>
-                <% }) %>
-            </select>
-        </div>
-
-
-
-        <button type="submit">Add vehicle</button>
-    </form>
+	<form action="/vehicles/new" method="post">
+		<div>
+			<label>Type of vehicle</label>
+			<input name="vehType" type="string" placeholder="Van, Car, Lorry" />
+		</div>
+		<div>
+			<label>Vehicle color</label>
+			<input name="vehColor" type="string" placeholder="Red, green, Blue" />
+		</div>
+		<div>
+			<label>Car Plate Number</label>
+			<input name="carPlate" type="string" placeholder="SHA 1111 A" />
+		</div>
+		<div>
+			<select name="ownedBy">
+				<option value="">Owner</option>
+				<% users.forEach(user => { %>
+				<option value="<%= user._id %>"><%= user.getName() %> </option>
+				<% }) %>
+			</select>
+		</div>
+		<div>
+			<select name="spaceTaken">
+				<option value="">Parking lot</option>
+				<% spaces.forEach(space => { %>
+				<option value="<%= space._id %>">
+					Lot: <%= space.spaceNumber %> Car Plate: <%
+					if(space.spaceUsedBy.length > 0){ %> <%=
+					space.spaceUsedBy[0].carPlate%><% } else{%> No plates number <% }%>
+				</option>
+				<% }) %>
+			</select>
+		</div>
+		<button type="submit">Add vehicle</button>
+	</form>
 </div>

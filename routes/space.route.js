@@ -55,6 +55,7 @@ router.get('/', async (req, res) => {
 	}
 });
 
+//remove vehicle from the space
 router.post('/:id/vehicle/:vehicle_id', (req, res) => {
 	Space.findByIdAndUpdate(req.params.id, {
 		$pull: { spaceUsedBy: req.params.vehicle_id },
