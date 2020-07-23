@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Space = require("../models/space.model");
+const Vehicle = require("../models/vehicle.model");
+const User = require("../models/user.model");
 
 
 // router.get("/spaces", (req, res) => {
@@ -37,10 +39,20 @@ router.post("/new", (req, res) => {
 
 router.get("/", async (req, res) => {
     try {
-        let spaces = await Space.find();
+        //get all spaces
+        let spaces = await Space.find()
+            .populate("spaceUsedBy");
+
+        //get all users
+        let users = await User.find();
+
+        //get all vehicles
+        let vehicles = await Vehicle.find();
 
         res.render("spaces/show", {
-            spaces
+            spaces,
+            users,
+            vehicles
         });
     } catch (error) {
         console.log(error);

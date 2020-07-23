@@ -24,6 +24,8 @@ router.get("/show", async (req, res) => {
         // console.log(vehicles);
         res.render("vehicles/show", {
             vehicles,
+            users,
+            spaces
         });
     } catch (error) {
         console.log(error);
@@ -57,7 +59,7 @@ router.post("/new", (req, res) => {
             //if saved then save space
             Space.findById(vehicle.spaceTaken).then((space) => {
                 //push into spaceTaken in space model
-                space.spaceTaken.push(vehicle._id);
+                space.spaceUsedBy.push(vehicle._id);
 
                 space.save().then(() => {
                     res.redirect("/vehicles/show");
@@ -76,7 +78,7 @@ router.get("/new", async (req, res) => {
 
         res.render("vehicles/new", {
             users,
-            spaces
+            spaces,
         });
     } catch (error) {
         console.log(error);

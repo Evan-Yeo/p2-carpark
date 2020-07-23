@@ -6,10 +6,10 @@ const spaceSchema = Schema({
         type: String,
         required: true,
     },
-    spaceUsedBy: {
+    spaceUsedBy: [{
         type: String,
         ref: "Vehicle",
-    },
+    }, ],
     //     isFilled: {
     //         type: Boolean,
     //         default: false,
@@ -20,7 +20,7 @@ const spaceSchema = Schema({
 
 
 spaceSchema.methods.getName = function () {
-    return `${this.spaceNumber}`;
+    return `Lot: ${this.spaceNumber}  Car Plate: ${this.spaceUsedBy.carPlate}`;
 }
 
 
