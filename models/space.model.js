@@ -17,5 +17,12 @@ const spaceSchema = Schema({
 
 });
 
+
+
+spaceSchema.methods.getName = function () {
+    return `${this.spaceNumber}`;
+}
+
+
 const Space = mongoose.model("Space", spaceSchema);
 module.exports = Space;

@@ -2,3 +2,17 @@
     <h2>Lots used</h2>
     <a href="/spaces/new">Add Lots (Admin only)</a>
 </div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <ul>
+                    <% spaces.forEach(space => { %>
+                    <li><%= space.getName() %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

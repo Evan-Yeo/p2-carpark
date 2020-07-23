@@ -72,10 +72,11 @@ router.post("/new", (req, res) => {
 router.get("/new", async (req, res) => {
     try {
         let users = await User.find();
-
+        let spaces = await Space.find();
 
         res.render("vehicles/new", {
             users,
+            spaces
         });
     } catch (error) {
         console.log(error);
