@@ -18,6 +18,9 @@ router.get("/show", async (req, res) => {
         //get all users
         let users = await User.find();
 
+        //get all spaces
+        let spaces = await Space.find();
+
         // console.log(vehicles);
         res.render("vehicles/show", {
             vehicles,
@@ -44,10 +47,19 @@ router.post("/new", (req, res) => {
         .then(() => {
             //if saved then save user
             User.findById(vehicle.ownedBy).then((user) => {
-                //push into vehicles array in user model
+                //push into vehiclesOwned array in user model
                 user.vehiclesOwned.push(vehicle._id);
 
                 user.save().then(() => {
+                    res.redirect("/vehicles/show");
+                });
+            });
+            //if saved then save space
+            Space.findById(vehicle.spaceTaken).then((space) => {
+                //push into spaceTaken in space model
+                space.spaceTaken.push(vehicle._id);
+
+                space.save().then(() => {
                     res.redirect("/vehicles/show");
                 });
             });
