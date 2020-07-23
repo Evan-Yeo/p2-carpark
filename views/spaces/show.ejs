@@ -1,18 +1,30 @@
 <div class="container mt-5">
-    <h2>Lots used</h2>
-    <a href="/spaces/new">Add Lots (Admin only)</a>
+	<h2>Lots used</h2>
+	<a href="/spaces/new">Add Lots (Admin only)</a>
 </div>
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <ul>
-                    <% spaces.forEach(space => { %>
-                    <li><%= space.getName() %></li>
-                    <% }) %>
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<ul>
+					<% spaces.forEach((space, i) => { %>
+					<li>
+						Lot: <%= space.spaceNumber %> Car Plate: <%
+						if(space.spaceUsedBy.length > 0){ %> <%=
+						space.spaceUsedBy[0].carPlate%>
+						<form
+							action="/spaces/<%= space._id%>/vehicle/<%=
+                        space.spaceUsedBy[0]._id%>"
+							method="post"
+						>
+							<button type="submit">Delete</button>
+						</form>
+						<% } else{%> No plates number <% }%>
+					</li>
+					<%}) %>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
